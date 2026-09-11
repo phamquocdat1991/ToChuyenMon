@@ -1,7 +1,7 @@
 import { env } from '@/lib/runtime';
 import { getSessionUser } from '@/lib/auth';
 export class AppError extends Error{constructor(message:string,public status=400){super(message)}}
-export function db(){if(!process.env.DATABASE_URL)throw new AppError('Kho dữ liệu chưa được kết nối. Quản trị viên cần hoàn tất cấu hình.',503);return env.DB;}
+export function db(){return env.DB;}
 export async function context(){const user=await getSessionUser();if(!user)throw new AppError('Vui lòng đăng nhập để lưu dữ liệu.',401);const database=db();const email=user.email.toLowerCase();let membership=await database.prepare('SELECT * FROM memberships WHERE email=?').bind(email).first<any>();if(!membership){const wid=user.userId;await database.batch([database.prepare('INSERT OR IGNORE INTO workspaces (id,owner,name,year,school) VALUES (?,?,?,?,?)').bind(wid,user.userId,'Tổ Khoa học tự nhiên','2026–2027','Trường của tôi'),database.prepare('INSERT OR IGNORE INTO memberships (id,workspace,email,role,member) VALUES (?,?,?,?,?)').bind(crypto.randomUUID(),wid,email,'Tổ trưởng',null)]);membership=await database.prepare('SELECT * FROM memberships WHERE email=?').bind(email).first<any>();}const workspace=await database.prepare('SELECT * FROM workspaces WHERE id=?').bind(membership.workspace).first<any>();return {user,database,membership,workspace};}
 export type Context=Awaited<ReturnType<typeof context>>;
 export function manage(c:Context){return ['Tổ trưởng','Tổ phó'].includes(c.membership.role);}
