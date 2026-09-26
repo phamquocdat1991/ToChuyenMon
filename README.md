@@ -29,9 +29,14 @@ Khi chưa cấu hình dịch vụ, app hiển thị dữ liệu mẫu có nhãn.
 
 Dashboard, tìm kiếm, thành viên, phân công, kế hoạch, họp tổ, chuyên đề, dự giờ, tiến độ môn học, hồ sơ và minh chứng, ngân hàng đề, nhiệm vụ, lịch, thống kê.
 
-Hồ sơ liên kết năm học, người phụ trách và hoạt động. Phê duyệt sáu bước, giữ phiên bản cũ, kiểm tra cập nhật đồng thời. Hoàn thành cuộc họp tạo biên bản và nhiệm vụ trong một giao dịch. Phân quyền kiểm tra phía máy chủ; không tin cậy header định danh từ trình duyệt.
-
-Tệp tải qua server tối đa **4 MB** để phù hợp Vercel Functions; tệp lớn cần bổ sung upload trực tiếp có chữ ký. Tệp Supabase luôn riêng tư. Xuất Word tương thích `.doc`, CSV mở bằng Excel và PDF qua chức năng in.
+### Nghiệp vụ Đổi mới Sư phạm (Bộ GD&ĐT)
+- **Studio Thẩm định SKKN**: Barem 100 điểm (30 - 30 - 25 - 15), phân tích 4 thành tố khoa học (Biện pháp, Đối tượng, Phạm vi, Mục tiêu), phản hồi chuyên sâu Sandwich Feedback (Khen ngợi ➔ Gợi ý khắc phục ➔ Khích lệ sư phạm), xuất phiếu thẩm định chuẩn Nghị định 30/2020/NĐ-CP.
+- **Ma trận & Bảng đặc tả Đề kiểm tra**: Chuẩn Thông tư 22/2021/TT-BGDĐT, 4 mức độ nhận thức (Nhận biết 40% - Thông hiểu 30% - Vận dụng 20% - Vận dụng cao 10%), tự động cân bằng 10.0 điểm, Gemini AI soạn thảo câu hỏi bám sát ma trận và bảng đặc tả.
+- **Sinh hoạt chuyên môn Nghiên cứu bài học & Dự giờ 12 tiêu chí**: Quy trình 4 bước theo Công văn 1315/BGDĐT-GDTrH kết hợp Phiếu đánh giá tiết dạy 12 tiêu chí chuẩn Công văn 5512/BGDĐT, tự động phân nhóm và xếp loại.
+- **Quản lý Định mức tiết dạy & Cân đối chuyên môn**: Chuẩn Thông tư 28/2009/TT-BGDĐT & Thông tư 15/2017/TT-BGDĐT, tự động trừ tiết kiêm nhiệm (Tổ trưởng, Tổ phó, GVCN, Thiết bị, Nuôi con nhỏ...), phát hiện thừa/thiếu tiết dạy.
+- **Xuất văn bản Word chuẩn Nghị định 30/2020/NĐ-CP**: Đầy đủ Quốc hiệu, Tiêu ngữ, Tên cơ quan, Số hiệu, Bố cục La Mã, chữ ký thẩm quyền.
+- **Đồng bộ Lịch chuyên môn iCalendar (RFC 5545)**: Xuất file `.ics` đồng bộ tức thì vào Google Calendar, Apple Calendar trên điện thoại.
+- **Hỗ trợ công thức Toán - KHTN**: Nhúng KaTeX hiển thị công thức trực quan trong đề thi và bảng đặc tả.
 
 ## Phân quyền
 
